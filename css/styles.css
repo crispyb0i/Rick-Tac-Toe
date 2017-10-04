@@ -1,32 +1,82 @@
 td {
-  width: 300px;
-  height: 300px;
-  border: 10px solid black;
+  width: 180px;
+  height: 180px;
+  border: 5px solid black;
 }
 
 #table {
-  margin-top: 100px;
+  margin-top: 10px;
 }
 
-h1 {
+h2 {
   text-align: center;
   font-size: 80px;
-  margin-top: 80px;
+  margin-top: 40px;
   margin-bottom: -40px;
 }
 
 img {
-  max-height: 100%;
+  max-height: 80%;
+  max-width: 80%;
   display: block;
-  margin: auto;
-  display: none;
+  margin-top: 10px;
+  margin:auto;
+  /*display: none;*/
+}
+
+img.banner{
+  display: absolute;
 }
 .highlight {
   background-color: #67fc7d;
 }
+img.morty {
+  display:none;
+  height: 80%;
+  /*width: 80px;
+  margin: 0px 30%;*/
+}
 img.rick {
-  height: 100%;
-  width: 500px;
-  margin: 0px -110px;
-  float: right;
+  display:none;
+}
+
+#rickWin {
+  display:none;
+  /*display:block;
+  margin-top: 110px;
+  height: 50%;
+  width: 40%;*/
+}
+
+.grayout {
+    opacity: 0.4; /* Real browsers */
+    filter: alpha(opacity = 60); /* MSIE */
+}
+
+button {
+  display:block;
+  margin-right:50px;
+  margin-bottom:-20px;
+  float:right;
+}
+
+.winner {
+    position: absolute;
+    top: 60%;
+    left: 37%;
+    width: 300px;
+    height: 400px;
+    margin:-60px 0 0 -60px;
+    -webkit-animation:spin 4s linear infinite;
+    -moz-animation:spin 4s linear infinite;
+    animation:spin 4s linear infinite;
+}
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+#mortyWin {
+  display:none;
+  height: 350px;
+  width: 300px;
 }
