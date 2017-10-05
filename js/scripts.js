@@ -11,11 +11,16 @@ function switchTurn(){
 function reset(){
   player1Turn = true;
   player2Turn = false;
+  $("#rickName").removeClass("grayout")
+  $("#mortyName").addClass("grayout")
   array = [0,1,2,3,4,5,6,7,8];
   console.log(array)
   $("img").hide();
-  $("td").hasClass("unbind");
+  $("#banner").show();
   $("#1,#2,#3,#4,#5,#6,#7,#8,#9").removeClass("highlight");
+  $("#mortyWin").hide();
+  $("#rickWin").hide();
+  $("td").removeClass('unbind');
 }
 
 $(function() {
@@ -27,7 +32,7 @@ $(function() {
   });
 
   $("td").click(function() {
-    $(this).unbind("click");
+    $(this).addClass("unbind");
     if (player1Turn===true) {
       array[parseInt(this.id)-1]="Rick"
       $(this).children(".rick").show("fast","linear");
@@ -43,8 +48,10 @@ $(function() {
       switchTurn();
       }
       if(array[0]===array[1]&&array[1]===array[2]){
-        $("td").unbind("click");
+        $("td").addClass("unbind");
         $("#1, #2, #3").addClass("highlight");
+        $("#mortyName").addClass("grayout")
+        $("#rickName").addClass("grayout")
         if(array[0]==="Morty"){
           $("#mortyWin").show();
         }else if(array[0]==="Rick"){
@@ -53,8 +60,10 @@ $(function() {
         victor=true;
         alert(array[0] + " wins!");
       }if(array[3]===array[4]&&array[4]===array[5]){
-        $("td").unbind("click");
+        $("td").addClass("unbind");
         $("#4, #5, #6").addClass("highlight");
+        $("#mortyName").addClass("grayout")
+        $("#rickName").addClass("grayout")
         if(array[3]==="Morty"){
           $("#mortyWin").show();
         }else if(array[3]==="Rick"){
@@ -63,8 +72,10 @@ $(function() {
         victor=true;
         alert(array[3] + " wins!");
       }if(array[6]===array[7]&&array[7]===array[8]){
-        $("td").unbind("click");
+        $("td").addClass("unbind");
         $("#7, #8, #9").addClass("highlight");
+        $("#mortyName").addClass("grayout")
+        $("#rickName").addClass("grayout")
         if(array[6]==="Morty"){
           $("#mortyWin").show();
         }else if(array[6]==="Rick"){
@@ -73,8 +84,10 @@ $(function() {
         victor=true;
         alert(array[6] + " wins!");
       }if(array[0]===array[3]&&array[3]===array[6]){
-        $("td").unbind("click");
+        $("td").addClass("unbind");
         $("#1, #4, #7").addClass("highlight");
+        $("#mortyName").addClass("grayout")
+        $("#rickName").addClass("grayout")
         if(array[0]==="Morty"){
           $("#mortyWin").show();
         }else if(array[0]==="Rick"){
@@ -83,8 +96,10 @@ $(function() {
         victor=true;
         alert(array[0] + " wins!");
       }if(array[1]===array[4]&&array[4]===array[7]){
-        $("td").unbind("click");
+        $("td").addClass("unbind");
         $("#2, #5, #8").addClass("highlight");
+        $("#mortyName").addClass("grayout")
+        $("#rickName").addClass("grayout")
         if(array[1]==="Morty"){
           $("#mortyWin").show();
         }else if(array[1]==="Rick"){
@@ -93,8 +108,10 @@ $(function() {
         victor=true;
         alert(array[1] + " wins!");
       }if(array[2]===array[5]&&array[5]===array[8]){
-        $("td").unbind("click");
+        $("td").addClass("unbind");
         $("#3, #6, #9").addClass("highlight");
+        $("#mortyName").addClass("grayout")
+        $("#rickName").addClass("grayout")
         if(array[2]==="Morty"){
           $("#mortyWin").show();
         }else if(array[2]==="Rick"){
@@ -103,8 +120,10 @@ $(function() {
         victor=true;
         alert(array[2] + " wins!");
       }if(array[0]===array[4]&&array[4]===array[8]){
-        $("td").unbind("click");
+        $("td").addClass("unbind");
         $("#1, #5, #9").addClass("highlight");
+        $("#mortyName").addClass("grayout")
+        $("#rickName").addClass("grayout")
         if(array[0]==="Morty"){
           $("#mortyWin").show();
         }else if(array[0]==="Rick"){
@@ -113,8 +132,10 @@ $(function() {
         victor=true;
         alert(array[0] + " wins!");
       }if(array[2]===array[4]&&array[4]===array[6]){
-        $("td").unbind("click");
+        $("td").addClass("unbind");
         $("#3, #5, #7").addClass("highlight");
+        $("#mortyName").addClass("grayout")
+        $("#rickName").addClass("grayout")
         if(array[2]==="Morty"){
           $("#mortyWin").show();
         }else if(array[2]==="Rick"){
