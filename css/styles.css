@@ -15,24 +15,28 @@ h2 {
   margin-bottom: -40px;
 }
 
+img.banner{
+  display: absolute;
+  width:100%;
+  height: 100%;
+}
+
 img {
-  max-height: 80%;
-  max-width: 80%;
+  max-height: 75%;
+  max-width: 75%;
   display: block;
   margin-top: 10px;
   margin:auto;
   /*display: none;*/
 }
 
-img.banner{
-  display: absolute;
-}
+
 .highlight {
   background-color: #67fc7d;
 }
 img.morty {
   display:none;
-  height: 80%;
+  /*height: 80%;*/
   /*width: 80px;
   margin: 0px 30%;*/
   border-radius: 10%;
@@ -67,10 +71,10 @@ button {
 .winner {
     position: absolute;
     top: 60%;
-    left: 37%;
+    right: 33%;
     width: 300px;
     height: 400px;
-    margin:-30px 0 0 -20px;
+    margin: 0 0 0 0;
     -webkit-animation:spin 4s linear infinite;
     -moz-animation:spin 4s linear infinite;
     animation:spin 4s linear infinite;

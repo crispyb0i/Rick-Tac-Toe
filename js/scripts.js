@@ -56,14 +56,14 @@ $(function() {
     $(this).addClass("unbind");
     if (player1Turn===true) {
       array[parseInt(this.id)-1]="Rick"
-      $(this).children(".rick").show("fast","linear");
+      $(this).children(".rick").show();
       $("#rickName").addClass("grayout")
       $("#mortyName").removeClass("grayout")
       switchTurn();
     }
     else if (player2Turn===true){
       array[parseInt(this.id)-1]="Morty"
-      $(this).children(".morty").show("fast","linear");
+      $(this).children(".morty").show();
       $("#mortyName").addClass("grayout")
       $("#rickName").removeClass("grayout")
       switchTurn();
