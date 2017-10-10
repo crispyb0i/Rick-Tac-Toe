@@ -3,7 +3,10 @@ var player2Turn = false;
 var array = [0,1,2,3,4,5,6,7,8];
 var drawCounter = 0;
 var victor = false;
-var win = new Audio('./schwifty.mp3');
+var rickWin = new Audio('./schwifty.mp3');
+var mortyWin = new Audio('./morty.mp3')
+var draw = new Audio('./opposite.mp3');
+
 
 function switchTurn(){
   player1Turn=!player1Turn;
@@ -11,6 +14,7 @@ function switchTurn(){
 }
 function reset(){
   drawCounter = 0;
+  victor = false;
   player1Turn = true;
   player2Turn = false;
   $("#rickName").removeClass("grayout")
@@ -23,15 +27,21 @@ function reset(){
   $("#mortyWin").hide();
   $("#rickWin").hide();
   $("td").removeClass('unbind');
-  win.pause();
-  console.log("test")
-  win.currentTime=0;
+  rickWin.pause();
+  rickWin.currentTime=0;
+  draw.pause();
+  draw.currentTime=0;
+  mortyWin.pause();
+  mortyWin.currentTime=0;
 }
 
 $(function() {
+  rickWin.volume=0.4;
+  mortyWin.volume=0.4;
+  draw.volume=1;
   var obj = document.createElement("audio");
           obj.src="https://kahimyang.com/resources/sound/click.mp3";
-          obj.volume=0.50;
+          obj.volume=0.20;
           obj.autoPlay=false;
           obj.preLoad=true;
 
@@ -65,10 +75,10 @@ $(function() {
         $("#rickName").addClass("grayout")
         if(array[0]==="Morty"){
           $("#mortyWin").show();
-          win.play();
+          mortyWin.play();
         }else if(array[0]==="Rick"){
           $("#rickWin").show();
-          win.play();
+          rickWin.play();
         }
         victor=true;
         // alert(array[0] + " wins!");
@@ -79,10 +89,10 @@ $(function() {
         $("#rickName").addClass("grayout")
         if(array[3]==="Morty"){
           $("#mortyWin").show();
-          win.play();
+          mortyWin.play();
         }else if(array[3]==="Rick"){
           $("#rickWin").show();
-          win.play();
+          rickWin.play();
         }
         victor=true;
         // alert(array[3] + " wins!");
@@ -93,10 +103,10 @@ $(function() {
         $("#rickName").addClass("grayout")
         if(array[6]==="Morty"){
           $("#mortyWin").show();
-          win.play();
+          mortyWin.play();
         }else if(array[6]==="Rick"){
           $("#rickWin").show();
-          win.play();
+          rickWin.play();
         }
         victor=true;
         // alert(array[6] + " wins!");
@@ -107,10 +117,10 @@ $(function() {
         $("#rickName").addClass("grayout")
         if(array[0]==="Morty"){
           $("#mortyWin").show();
-          win.play();
+          mortyWin.play();
         }else if(array[0]==="Rick"){
           $("#rickWin").show();
-          win.play();
+          rickWin.play();
         }
         victor=true;
         // alert(array[0] + " wins!");
@@ -121,10 +131,10 @@ $(function() {
         $("#rickName").addClass("grayout")
         if(array[1]==="Morty"){
           $("#mortyWin").show();
-          win.play();
+          mortyWin.play();
         }else if(array[1]==="Rick"){
           $("#rickWin").show();
-          win.play();
+          rickWin.play();
         }
         victor=true;
         // alert(array[1] + " wins!");
@@ -135,10 +145,10 @@ $(function() {
         $("#rickName").addClass("grayout")
         if(array[2]==="Morty"){
           $("#mortyWin").show();
-          win.play();
+          mortyWin.play();
         }else if(array[2]==="Rick"){
           $("#rickWin").show();
-          win.play();
+          rickWin.play();
         }
         victor=true;
         // alert(array[2] + " wins!");
@@ -149,10 +159,10 @@ $(function() {
         $("#rickName").addClass("grayout")
         if(array[0]==="Morty"){
           $("#mortyWin").show();
-          win.play();
+          mortyWin.play();
         }else if(array[0]==="Rick"){
           $("#rickWin").show();
-          win.play();
+          rickWin.play();
         }
         victor=true;
         // alert(array[0] + " wins!");
@@ -163,10 +173,10 @@ $(function() {
         $("#rickName").addClass("grayout")
         if(array[2]==="Morty"){
           $("#mortyWin").show();
-          win.play();
+          mortyWin.play();
         }else if(array[2]==="Rick"){
           $("#rickWin").show();
-          win.play();
+          rickWin.play();
         }
         victor=true;
         // alert(array[2] + " wins!");
@@ -178,7 +188,8 @@ $(function() {
       if(drawCounter===0 && victor===false){
         $("#rickName").addClass("grayout")
         $("#mortyName").addClass("grayout")
-        alert("Draw Game")
+        $("#draw").show();
+        draw.play();
       }
       drawCounter=0
     });
